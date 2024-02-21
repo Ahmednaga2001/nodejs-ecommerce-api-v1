@@ -8,6 +8,7 @@ const {dbConn} = require("./configs/dbConn")
 const categoryRoute = require('./routes/categoryRoute')
 const subCategoryRoute = require('./routes/subCategoryRoute')
 const brandRoute = require('./routes/brandRoute')
+const productRoute = require("./routes/productRoute")
 
 
 const ApiError = require('./utils/apiError')
@@ -24,6 +25,7 @@ app.use(express.json())
 app.use('/api/v1/categories',categoryRoute)
 app.use('/api/v1/subcategories' , subCategoryRoute)
 app.use('/api/v1/brands' , brandRoute )
+app.use('/api/v1/products' , productRoute)
 
 //
 app.all("*",(req,res,next)=>{
@@ -42,6 +44,7 @@ app.use((err,req,res,next)=>{
 
 
 })
+
 
 const port = process.env.PORT || 8000
 app.listen(port, () => {

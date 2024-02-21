@@ -1,8 +1,9 @@
 const express = require("express")
 const { createSubCategory, getSubCategory, getSubCategories, updateSubCategory, deleteSubCategory } = require("../controllers/subCategoryController")
 const validateObjectId = require("../middleware/validateObjectIdMiddleware")
-const validationMiddleware = require("../middleware/validationMiddleware")
 const { createsubCategoryValidator } = require("../services/subCategoryValidator")
+const { validationMiddleware } = require("../middleware/validationMiddleware")
+
 
 const router = express.Router()
 

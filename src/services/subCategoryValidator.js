@@ -1,5 +1,7 @@
 const Joi = require("joi")
-const Category = require("../models/categoryModel")
+// const Category = require("../models/categoryModel")
+// const { check, body } = require('express-validator');
+// const validationMiddleware = require('../middleware/validationMiddleware');
 
 exports.createsubCategoryValidator = Joi.object({
     name: Joi.string()
@@ -18,16 +20,20 @@ exports.createsubCategoryValidator = Joi.object({
         .required().messages({
             'any.required': 'categoryId is required'
         })
-    // .custom(async (value, helpers) => {
-    //     try {
-    //         console.log("value" + value);
-    //         const category = await Category.findById(value);
-    //         if (!category) {
-    //             return helpers.message('Category does not exist');
-    //         }
-    //         return value;
-    //     } catch (error) {
-    //         return helpers.error('Category validation failed');
-    //     }
-    // }),
+
 });
+// exports.createSubCategoryValidator = [
+//     check('name')
+//       .notEmpty()
+//       .withMessage('SubCategory required')
+//       .isLength({ min: 2 })
+//       .withMessage('Too short Subcategory name')
+//       .isLength({ max: 32 })
+//       .withMessage('Too long Subcategory name'),
+//     check('category')
+//       .notEmpty()
+//       .withMessage('subCategory must be belong to category')
+//       .isMongoId()
+//       .withMessage('Invalid Category id format'),
+//     validationMiddleware,
+//   ];

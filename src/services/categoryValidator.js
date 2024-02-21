@@ -1,6 +1,6 @@
-// categoryValidator.js
 const joi = require("joi");
-
+// const { check, body } = require('express-validator');
+// const validationMiddleware = require('../middleware/validationMiddleware');
 exports.createCategoryValidator = 
      joi.object({
         name: joi.string().trim().min(2).max(32).required().messages({
@@ -11,5 +11,17 @@ exports.createCategoryValidator =
             'any.required': 'Category is required',
         }),
     })
+
+// exports.createCategoryValidator = [
+//   check('name')
+//     .notEmpty()
+//     .withMessage('Category required')
+//     .isLength({ min: 3 })
+//     .withMessage('Too short category name')
+//     .isLength({ max: 32 })
+//     .withMessage('Too long category name'),
+//   validationMiddleware,
+// ];
+
 
 

@@ -4,7 +4,7 @@ const asyncHandler = require("express-async-handler")
 const ApiError = require('../utils/apiError')
 
 
-// @dec  get list of  category
+// @dec  get list of  categories
 // @route  get  /api/v1/categories
 // @access  public
 exports.getCategories = asyncHandler(async (req, res) => {
